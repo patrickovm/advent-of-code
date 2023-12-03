@@ -1,17 +1,19 @@
-package main
+package partone
 
-import "testing"
+import (
+	"testing"
+)
 
-func TestPartOneCaseOne(t *testing.T) {
-	calibration := partOne("input_test.txt")
+func TestPartOneExample(t *testing.T) {
+	calibration := Calibration("input_test.txt")
 	expected := 142
 	if calibration != expected {
 		t.Errorf("Calibration returned %d, expected %d", calibration, expected)
 	}
 }
 
-func TestPartOneCasetwo(t *testing.T) {
-	calibration := partOne("input.txt")
+func TestPartOneInput(t *testing.T) {
+	calibration := Calibration("../input.txt")
 	expected := 55712
 	if calibration != expected {
 		t.Errorf("Calibration returned %d, expected %d", calibration, expected)
