@@ -9,16 +9,15 @@ import (
 )
 
 func Calibration(inputPath string) int {
-
 	input, err := partone.ReadLines(inputPath)
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	sum := 0
 	re := regexp.MustCompile(`^(\d|one|two|three|four|five|six|seven|eight|nine)`)
 
 	for _, line := range input {
-
 		var currentLine []string
 
 		for i := range line {
@@ -44,6 +43,7 @@ func Calibration(inputPath string) int {
 		}
 		sum += num
 	}
+
 	return sum
 }
 
