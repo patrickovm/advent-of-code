@@ -7,7 +7,7 @@ clean:
 	rm -rf bin/*
 
 test:
-	go test -v ./part_one/
+	go test -v ./part_one/ ./part_two/
 
 run:
 	./bin/day01

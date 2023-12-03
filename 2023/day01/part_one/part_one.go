@@ -10,7 +10,7 @@ import (
 )
 
 func Calibration(inputPath string) int {
-	lines, err := ReadLine(inputPath)
+	lines, err := ReadLines(inputPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19,7 +19,7 @@ func Calibration(inputPath string) int {
 	var sum int
 
 	for _, v := range lines {
-		num, err = FindNumber(v)
+		num, err = findNumber(v)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -29,7 +29,7 @@ func Calibration(inputPath string) int {
 	return sum
 }
 
-func ReadLine(filePath string) ([]string, error) {
+func ReadLines(filePath string) ([]string, error) {
 	file, err := os.Open(filePath)
 	if err != nil {
 		log.Fatal(err)
@@ -55,7 +55,7 @@ func ReadLine(filePath string) ([]string, error) {
 	return inputLines, nil
 }
 
-func FindNumber(s string) (int, error) {
+func findNumber(s string) (int, error) {
 	re := regexp.MustCompile(`\d`)
 
 	matches := re.FindAllString(s, -1)
