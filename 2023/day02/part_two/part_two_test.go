@@ -1,4 +1,4 @@
-package partone
+package parttwo
 
 import (
 	"log"
@@ -6,23 +6,24 @@ import (
 )
 
 func TestPartOneExample(t *testing.T) {
-	result, err := SumOfPossibleIDs("../input_test.txt")
+	result, err := SumOfPower("../input_test.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
-	expected := 8
+	expected := 2286
 
 	if result != expected {
 		t.Errorf("Sum of IDs of valid games returned %d, expected %d", result, expected)
 	}
+
 }
 
 func TestPartOneInput(t *testing.T) {
-	result, err := SumOfPossibleIDs("../input.txt")
+	result, err := SumOfPower("../input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
-	expected := 1734
+	expected := 70387
 
 	if result != expected {
 		t.Errorf("Sum of IDs of valid games returned %d, expected %d", result, expected)
